@@ -97,4 +97,5 @@ Self-test, which makes sample media, runs every node and writes the results:
 
 ## License
 
-None yet, so all rights are reserved for now. Open an issue if you'd like to use the code.
+[MIT](LICENSE): use it, change it, share it, just keep the copyright notice.
+yt-dlp, which the Download node fetches on first use, is a separate project under its own license (Unlicense).
