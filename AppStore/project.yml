@@ -48,7 +48,7 @@ targets:
         ENABLE_APP_SANDBOX: YES
         ENABLE_HARDENED_RUNTIME: YES
         CODE_SIGN_STYLE: Automatic
-        DEVELOPMENT_TEAM: ""
+        DEVELOPMENT_TEAM: 83S5G3QWTM
         COMBINE_HIDPI_IMAGES: YES
         # Universal: macOS 26 still runs on some Intel Macs
         ARCHS: "arm64 x86_64"

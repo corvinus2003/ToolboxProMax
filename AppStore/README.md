@@ -25,6 +25,12 @@ open AppStore/ToolboxAppStore.xcodeproj
 The display name is the `APP_DISPLAY_NAME` setting in `project.yml`; the version is `MARKETING_VERSION`.
 Archive with the "Any Mac" destination to get a universal (Apple Silicon + Intel) build.
 
+## Store page
+
+- Texts to paste: [metadata/en-US.md](metadata/en-US.md)
+- Screenshots (2880×1800, no alpha): [screenshots/](screenshots/), remade with `scripts/appstore-shots/`
+- Privacy policy: [docs/privacy.md](../docs/privacy.md)
+
 ## Publishing checklist
 
 In Xcode
