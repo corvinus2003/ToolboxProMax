@@ -8,6 +8,7 @@ The same source code builds two editions:
 | Download node (yt-dlp) | yes | no: the App Store doesn't allow downloading from YouTube or running downloaded programs |
 | Sandbox | no | yes, with security-scoped bookmarks so saved graphs reopen their files |
 | Bundle ID | `app.toolboxpromax` | `io.github.corvinus2003.toolbox` (can never change once published) |
+| Name | Toolbox Pro Max | Toolbox Studio |
 | Distributed | GitHub releases, free | Mac App Store |
 
 The difference is the `APPSTORE` compilation flag (see `Sources/ToolboxProMax/App/Edition.swift`).
@@ -35,7 +36,7 @@ In App Store Connect (only the account holder can do these)
 - [ ] Agreements: accept the Paid Applications Agreement
 - [ ] Banking and tax forms
 - [ ] Optional: enroll in the App Store Small Business Program (15% commission instead of 30%)
-- [ ] New macOS app: name, bundle ID `io.github.corvinus2003.toolbox`, SKU
+- [ ] New macOS app: name "Toolbox Studio", bundle ID `io.github.corvinus2003.toolbox`, SKU
 - [ ] Price: USD 9.99
 - [ ] Description, keywords, screenshots (2880×1800 or 1440×900), support URL, privacy policy URL
 - [ ] App Privacy: "Data Not Collected"; category Photo & Video; age rating 4+

@@ -40,7 +40,7 @@ targets:
         com.apple.security.files.bookmarks.app-scope: true
     settings:
       base:
-        APP_DISPLAY_NAME: Toolbox Pro Max
+        APP_DISPLAY_NAME: Toolbox Studio
         PRODUCT_NAME: $(APP_DISPLAY_NAME)
         PRODUCT_BUNDLE_IDENTIFIER: io.github.corvinus2003.toolbox
         SWIFT_ACTIVE_COMPILATION_CONDITIONS: $(inherited) APPSTORE
