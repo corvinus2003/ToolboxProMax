@@ -1,3 +1,4 @@
+#if !APPSTORE // The Mac App Store edition has no downloading (see Edition.swift)
 import CryptoKit
 import Foundation
 
@@ -176,3 +177,4 @@ actor Downloader {
         return box.text
     }
 }
+#endif

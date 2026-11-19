@@ -60,7 +60,9 @@ enum Catalog {
 
     // MARK: Inputs
 
-    static let inputs: [NodeKind] = [
+    static let inputs: [NodeKind] = baseInputs + downloadInputs
+
+    static let baseInputs: [NodeKind] = [
         NodeKind(id: "image", title: "Image", symbol: "photo", category: .input,
                  summary: "A photo or picture from your Mac. iPhone HEIC works too.",
                  output: .image, params: [.files("file", "Image", types: ImageOps.readableTypes)]) { _, p, ctx in
@@ -93,9 +95,15 @@ enum Catalog {
         },
         NodeKind(id: "text", title: "Text", symbol: "text.alignleft", category: .input,
                  summary: "Words you type or paste.",
-                 output: .text, params: [.textArea("text", "Text", "Hello from Toolbox Pro Max")]) { _, p, _ in
+                 output: .text, params: [.textArea("text", "Text", "Hello from \(Edition.appName)")]) { _, p, _ in
             .text(p.string("text"))
         },
+    ]
+
+    #if APPSTORE
+    static let downloadInputs: [NodeKind] = []
+    #else
+    static let downloadInputs: [NodeKind] = [
         NodeKind(id: "download", title: "Download", symbol: "arrow.down.circle", category: .input,
                  summary: "Video or sound from YouTube, Vimeo, SoundCloud and a thousand other sites.",
                  output: .video, dynamicOutput: { $0.string("mode") == "audio" ? .audio : .video }, live: false,
@@ -122,6 +130,7 @@ enum Catalog {
             return .video(VideoClip(url: result.file, name: result.title))
         },
     ]
+    #endif
 
     // MARK: Image
 
@@ -248,7 +257,9 @@ enum Catalog {
                  summary: "Take the sound out of a video.",
                  inputs: [port(.video)], output: .audio) { inputs, _, _ in
             guard case .video(let c) = try input(inputs) else { throw ToolError("Needs a video") }
-            return .audio(try await AudioOps.load(c.url, start: c.start, end: c.end))
+            var clip = try await AudioOps.load(c.url, start: c.start, end: c.end)
+            clip.name = c.name // keep the video's title, not the file name (downloads are all "merged.mp4")
+            return .audio(clip)
         },
         NodeKind(id: "trimAudio", title: "Trim Audio", symbol: "scissors", category: .audio,
                  summary: "Keep only part of the sound.",

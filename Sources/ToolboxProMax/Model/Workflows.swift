@@ -9,7 +9,9 @@ struct Workflow: Identifiable {
     let summary: String
     let steps: [Step]
 
-    static let all: [Workflow] = [
+    static let all: [Workflow] = everything.filter { w in Edition.hasDownload || !w.steps.contains { $0.kind == "download" } }
+
+    private static let everything: [Workflow] = [
         Workflow(id: "yt-video", title: "Download a YouTube video", symbol: "play.rectangle.fill",
                  summary: "Paste a link, press Render, get an MP4.",
                  steps: [Step(kind: "download"), Step(kind: "exportVideo", params: ["format": .text("original")])]),

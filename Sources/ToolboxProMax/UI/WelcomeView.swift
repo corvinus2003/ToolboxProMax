@@ -9,7 +9,7 @@ struct WelcomeView: View {
             VStack(spacing: 10) {
                 AppGlyph(size: 88)
                     .padding(.bottom, 6)
-                Text("Welcome to\nToolbox Pro Max")
+                Text("Welcome to\n\(Edition.appName)")
                     .font(.system(size: 34, weight: .bold))
                     .multilineTextAlignment(.center)
             }
@@ -23,9 +23,15 @@ struct WelcomeView: View {
                 Feature(symbol: "laptopcomputer", color: .purple,
                         title: "Made of Mac",
                         text: "Core Image, AVFoundation, Vision and PDFKit do the work, on your Mac. Nothing is uploaded, no ffmpeg required.")
+                #if APPSTORE
+                Feature(symbol: "person.crop.rectangle.badge.plus", color: .pink,
+                        title: "Smart, on-device",
+                        text: "Cut a subject out of a photo or copy the text out of a scan. Apple's own models, right on your Mac.")
+                #else
                 Feature(symbol: "arrow.down.circle", color: .pink,
                         title: "YouTube, without the sketchy sites",
                         text: "Paste a link into a Download node. Picture and sound arrive together, ready to edit.")
+                #endif
                 Feature(symbol: "command", color: .orange,
                         title: "⌘R and done",
                         text: "Render runs everything at full size and saves every Export node's file.")
@@ -44,7 +50,7 @@ struct WelcomeView: View {
             .controlSize(.extraLarge)
             .keyboardShortcut(.defaultAction)
 
-            Text("Inspired by Cojo's Toolbox. Now with 100% more Pro and 100% more Max.")
+            Text(Edition.isAppStore ? "Inspired by Cojo's Toolbox." : "Inspired by Cojo's Toolbox. Now with 100% more Pro and 100% more Max.")
                 .font(.caption)
                 .foregroundStyle(.tertiary)
                 .padding(.top, 14)
