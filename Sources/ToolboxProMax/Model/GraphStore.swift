@@ -92,6 +92,8 @@ final class GraphStore {
         }
         showWelcome = !UserDefaults.standard.bool(forKey: "welcomeSeen")
         if graph.nodes.contains(where: { $0.kind == "ocr" }) { VisionOps.warmUp() }
+        // For screenshots: TPM_SELECT=<node kind> selects the first node of that kind on launch.
+        if let k = ProcessInfo.processInfo.environment["TPM_SELECT"] { selection = graph.nodes.first { $0.kind == k }?.id }
         refresh(delay: 0)
     }
 
