@@ -40,7 +40,7 @@ because it's true and because it's part of what makes the project interesting.
 
 ## Download
 
-Get `Toolbox-Pro-Max-0.1.0.dmg` from [Releases](../../releases).
+Get `Toolbox-Pro-Max-0.1.1.dmg` from [Releases](../../releases).
 
 - **Needs** a Mac with Apple Silicon (M1 or newer) and **macOS 26 Tahoe** or newer.
 - This build isn't signed with a paid certificate, so macOS asks once. Drag Toolbox Pro Max into
