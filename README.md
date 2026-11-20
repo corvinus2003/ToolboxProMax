@@ -71,10 +71,8 @@ network at all; Toolbox Studio Unboxed only does when you use the Download node.
 
 ## About the size
 
-The disk image is **2.3 MB**. Toolbox 0.3.0's Mac download is 164 MB. That's not because this one is
-cleverer: Toolbox also runs on Windows and Linux, so it carries its own browser engine (Electron) and its own
-ffmpeg. Toolbox Studio only runs on recent Macs and uses what macOS already ships: Core Image, AVFoundation,
-Vision and PDFKit. Different trade-offs, and Toolbox still does things this one doesn't (see below).
+The disk image is **2.3 MB**. Toolbox Studio only runs on recent Macs and uses what macOS already ships
+(Core Image, AVFoundation, Vision and PDFKit), so it doesn't need to bundle its own browser engine or ffmpeg.
 
 ## What's tested, and what isn't
 
@@ -90,7 +88,7 @@ people's Macs, very long or very large files, and a wide range of real-world for
 
 ## Known limitations
 
-- No WebP, AVIF or MP3 export, no webcam input, no Romanian diacritics tool (Toolbox has all of these).
+- No WebP, AVIF or MP3 export, no webcam input, no Romanian diacritics tool.
 - YouTube downloads go up to 1080p H.264. VP9/AV1-only formats aren't used.
 - The first accurate text recognition after each launch takes about 25 seconds while macOS loads its
   model. Live previews use the fast model in the meantime.
