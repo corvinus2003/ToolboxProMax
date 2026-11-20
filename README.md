@@ -15,8 +15,8 @@ tools with wires and watch every step update live. Press ⌘R and the finished f
 Toolbox Studio came from an idea by my friend Cojo ([MinuneIonel](https://github.com/MinuneIonel) on GitHub).
 It started under the name **Toolbox Pro Max** and was written from scratch as a native SwiftUI app for the Mac.
 
-I spent years learning to program and competing in C++ olympiads and contests, and I'm glad I did: it's
-what lets me build software this way now, without writing the code myself. Toolbox Studio was made with
+Being in the trenches of C++ olympiads and contests is what lets me build software this way now, without
+writing the code myself. Toolbox Studio was made with
 [Claude Code](https://claude.com/claude-code), Anthropic's AI coding agent. I decided what it should do,
 made the design decisions, followed and checked the code, tested it on my Mac and published it, including
 the Mac App Store submission. Claude wrote the code. Before each release a built-in self-test runs every
