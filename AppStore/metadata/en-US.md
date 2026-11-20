@@ -77,6 +77,6 @@ Data Not Collected.
 Free (can change later under Pricing and Availability).
 
 ## App Review notes
-No account or sign-in is needed. To try it quickly: open the app, pick a workflow in the welcome window
+No account or sign-in is needed. To try it quickly: open the app, press Continue, pick a workflow in the sidebar
 (for example "Cut out a subject"), drop any photo onto the Image node and press Render (⌘R).
 Files are saved to ~/Downloads/Toolbox Studio, or to a folder you choose in Settings.
