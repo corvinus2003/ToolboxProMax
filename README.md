@@ -10,27 +10,20 @@ tools with wires and watch every step update live. Press ⌘R and the finished f
 
 ![Toolbox Studio: a photo dithered with a sunset palette and redrawn as ASCII art, with the live preview in the inspector](AppStore/screenshots/1-photo.png)
 
-## From the C++ olympiad trenches to the App Store
+## How it came about
 
-I grew up writing algorithms in C++ for high-school olympiads and contests. Toolbox Studio started as a joke
-between friends: my friend Cojo ([MinuneIonel](https://github.com/MinuneIonel) on GitHub) built
-[Toolbox](https://github.com/MinuneIonel/Utilities), an Electron app that wires image, video, audio and PDF
-tools together as a node graph. I liked it, so the joke was to make "the same toy, but packaged the Apple
-way": a native SwiftUI app that looks and feels like it belongs on a Mac, with the most Apple name I could
-think of, **Toolbox Pro Max**. The idea is his. None of his code is used; everything here was written from
-scratch.
+Toolbox Studio came from an idea by my friend Cojo ([MinuneIonel](https://github.com/MinuneIonel) on GitHub).
+It started under the name **Toolbox Pro Max** and was written from scratch as a native SwiftUI app for the Mac.
 
-Here's the punchline: I climbed out of the trenches and ended up right back at a terminal, this time in
-[Claude Code](https://claude.com/claude-code), Anthropic's AI coding agent. Same keyboard, happier person:
-now I bring the idea, make the choices, test it on my Mac and do the publishing, and Claude writes the code.
+I spent years learning to program and competing in C++ olympiads and contests, and I'm glad I did: it's
+what lets me build software this way now, without writing the code myself. Toolbox Studio was made with
+[Claude Code](https://claude.com/claude-code), Anthropic's AI coding agent. I decided what it should do,
+made the design decisions, followed and checked the code, tested it on my Mac and published it, including
+the Mac App Store submission. Claude wrote the code. Before each release a built-in self-test runs every
+node on sample photos, video, sound and PDFs.
 
-Tongue in cheek, but with some truth in it: the olympiad C++ is why I trust that code. I can read it, more
-or less, and follow what it does. The rest of the trust comes from the self-test, which runs every node on
-real media before each release. And if the point is for a good idea to see the light of day, that's what
-matters.
-
-Then the joke grew up. It got an Apple Developer account, a proper name, and on 20 November 2026 it went to
-Apple for review. It now comes in two editions, built from the same code in this repository:
+On 20 November 2026 the app went to Apple for review. It comes in two editions, built from the same code
+in this repository:
 
 | | **Toolbox Studio Unboxed** (this page) | **Toolbox Studio** (Mac App Store) |
 | --- | --- | --- |
