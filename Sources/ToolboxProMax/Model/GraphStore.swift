@@ -63,9 +63,12 @@ final class GraphStore {
         get {
             access(keyPath: \.outputFolder)
             if let path = UserDefaults.standard.string(forKey: "outputFolder") { return URL(fileURLWithPath: path) }
-            return FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask)[0].appendingPathComponent("Toolbox Pro Max")
+            // In the sandbox ~/Downloads is a link inside the app's container; show and use the real folder.
+            return FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask)[0].resolvingSymlinksInPath()
+                .appendingPathComponent(Edition.appName)
         }
         set {
+            FileAccess.remember([newValue])
             withMutation(keyPath: \.outputFolder) { UserDefaults.standard.set(newValue.path, forKey: "outputFolder") }
         }
     }
@@ -84,6 +87,7 @@ final class GraphStore {
         .appendingPathComponent("Toolbox Pro Max/graph.json")
 
     init() {
+        FileAccess.restoreAll()
         if let data = try? Data(contentsOf: saveURL), let g = try? JSONDecoder().decode(Graph.self, from: data) {
             graph = Graph(nodes: g.nodes.filter { NodeKind.named($0.kind) != nil }, edges: g.edges)
         }
@@ -204,6 +208,7 @@ final class GraphStore {
     }
 
     func addFiles(_ urls: [URL], at screenPoint: CGPoint?) {
+        FileAccess.remember(urls)
         var point = screenPoint.map(toCanvas) ?? freeSpot()
         let images = urls.filter { ImageOps.isImage($0) }
         if images.count > 1 {
@@ -457,6 +462,7 @@ final class GraphStore {
     // MARK: Download
 
     func startDownload(_ id: UUID) {
+        #if !APPSTORE
         guard let node = graph.node(id), let kind = kind(node) else { return }
         let p = Params(values: node.params, kind: kind)
         let url = p.string("url"), audioOnly = p.string("mode") == "audio", quality = p.string("quality")
@@ -478,6 +484,7 @@ final class GraphStore {
                 if !(error is CancellationError) { errors[id] = error.localizedDescription }
             }
         }
+    #endif
     }
 
     func cancelDownload(_ id: UUID) {

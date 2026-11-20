@@ -5,7 +5,7 @@ struct ToolboxProMaxApp: App {
     @State private var store = GraphStore.shared
 
     var body: some Scene {
-        Window("Toolbox Pro Max", id: "main") {
+        Window(Edition.appName, id: "main") {
             ContentView()
                 .environment(store)
                 .frame(minWidth: 1000, minHeight: 620)
@@ -41,7 +41,7 @@ enum AppInfo {
         let style = NSMutableParagraphStyle(); style.alignment = .center
         credits.addAttribute(.paragraphStyle, value: style, range: NSRange(location: 0, length: credits.length))
         NSApp.orderFrontStandardAboutPanel(options: [
-            .applicationName: "Toolbox Pro Max",
+            .applicationName: Edition.appName,
             .applicationVersion: version,
             .version: "",
             .credits: credits,
@@ -54,7 +54,7 @@ struct AppCommands: Commands {
 
     var body: some Commands {
         CommandGroup(replacing: .appInfo) {
-            Button("About Toolbox Pro Max") { AppInfo.showAbout() }
+            Button("About \(Edition.appName)") { AppInfo.showAbout() }
         }
         CommandGroup(replacing: .newItem) {
             Button("New Graph") { store.clear() }
@@ -93,13 +93,15 @@ struct AppCommands: Commands {
                 .keyboardShortcut("i", modifiers: [.command, .option])
         }
         CommandGroup(replacing: .help) {
-            Button("Welcome to Toolbox Pro Max") { store.showWelcome = true }
+            Button("Welcome to \(Edition.appName)") { store.showWelcome = true }
+            #if !APPSTORE // the App Store does the updating there
             Button("Check for Updates…") {
                 let alert = NSAlert()
                 alert.messageText = "You're on the latest Pro Max."
                 alert.informativeText = "Toolbox Pro Max \(AppInfo.version) is as Pro and as Max as it gets. For now."
                 alert.runModal()
             }
+            #endif
         }
     }
 }
@@ -124,6 +126,7 @@ struct SettingsView: View {
                 }
                 Toggle("Show files in Finder after rendering", isOn: $reveal)
             }
+            #if !APPSTORE
             Section("Downloads") {
                 LabeledContent("Engine", value: "yt-dlp, updated weekly")
                 Button("Empty Download Cache") {
@@ -131,6 +134,7 @@ struct SettingsView: View {
                     try? FileManager.default.removeItem(at: dir)
                 }
             }
+            #endif
             Section {
                 Button("Show Welcome Screen") { store.showWelcome = true }
             }

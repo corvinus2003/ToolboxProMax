@@ -215,6 +215,7 @@ struct FilesControl: View {
         panel.canChooseDirectories = types.contains(.folder)
         panel.allowsMultipleSelection = multiple
         guard panel.runModal() == .OK else { return }
+        FileAccess.remember(panel.urls)
         let picked = panel.urls.map(\.path)
         store.setParam(node.id, spec.key, .files(multiple ? urls.map(\.path) + picked : picked))
     }

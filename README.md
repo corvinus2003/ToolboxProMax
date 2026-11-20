@@ -67,6 +67,12 @@ large files, and a wide range of real-world formats.
 - The Download node fetches yt-dlp from its GitHub releases the first time, checks it against the published
   SHA-256 and refreshes it weekly. Only download things you have the right to.
 
+## Two editions
+
+The same code builds the **full edition** (this page's releases, free, with the YouTube Download node) and a
+**Mac App Store edition** that is sandboxed and leaves out downloading, as the App Store requires.
+See [AppStore/README.md](AppStore/README.md).
+
 ## Build from source
 
 Needs Xcode 26 or newer.

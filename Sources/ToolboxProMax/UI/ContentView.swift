@@ -19,7 +19,7 @@ struct ContentView: View {
                         .inspectorColumnWidth(min: 300, ideal: 350, max: 520)
                 }
         }
-        .navigationTitle("Toolbox Pro Max")
+        .navigationTitle(Edition.appName)
         .navigationSubtitle(subtitle)
         .toolbar {
             ToolbarItemGroup(placement: .primaryAction) {
