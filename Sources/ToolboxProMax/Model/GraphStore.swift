@@ -84,7 +84,7 @@ final class GraphStore {
     @ObservationIgnored private var payloadCache: [Int: PreviewPayload] = [:]
 
     private let saveURL = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
-        .appendingPathComponent("Toolbox Pro Max/graph.json")
+        .appendingPathComponent("Toolbox Pro Max/graph.json") // old name kept so saved graphs survive the rename
 
     init() {
         FileAccess.restoreAll()

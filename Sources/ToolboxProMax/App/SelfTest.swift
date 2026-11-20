@@ -32,7 +32,7 @@ enum SelfTest {
         let movie = samples.appendingPathComponent("movie.mp4")
         let folder = samples.appendingPathComponent("batch")
         let doc = samples.appendingPathComponent("doc.pdf")
-        await step("sample photo") { try makePhoto(photo, text: "Toolbox Pro Max", hue: 0.62); return "" }
+        await step("sample photo") { try makePhoto(photo, text: "Toolbox Studio", hue: 0.62); return "" }
         await step("sample batch") {
             try FileManager.default.createDirectory(at: folder, withIntermediateDirectories: true)
             for (i, h) in [0.0, 0.33, 0.8].enumerated() { try makePhoto(folder.appendingPathComponent("p\(i + 1).png"), text: "Page \(i + 1)", hue: h) }
@@ -204,7 +204,7 @@ enum SelfTest {
             ctx.fill(CGRect(x: 0, y: 0, width: w, height: h))
             ctx.setFillColor(NSColor.white.cgColor)
             ctx.fillEllipse(in: CGRect(x: 40 + p * 440, y: 110, width: 140, height: 140))
-            PDFOps.drawText("Pro Max \(f)", in: ctx, at: CGPoint(x: 320, y: 50), size: 36, color: .white, weight: .semibold)
+            PDFOps.drawText("Studio \(f)", in: ctx, at: CGPoint(x: 320, y: 50), size: 36, color: .white, weight: .semibold)
             CVPixelBufferUnlockBaseAddress(pb, [])
             adaptor.append(pb, withPresentationTime: CMTime(value: CMTimeValue(f), timescale: fps))
         }

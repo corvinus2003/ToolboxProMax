@@ -1,6 +1,6 @@
 # Privacy Policy
 
-This policy covers **Toolbox Studio** (Mac App Store) and **Toolbox Pro Max** (GitHub), both made by Corvin Ghita.
+This policy covers **Toolbox Studio** (Mac App Store) and **Toolbox Studio Unboxed** (GitHub, formerly Toolbox Pro Max), both made by Corvin Ghita.
 Last updated: 20 November 2026.
 
 ## The short version
@@ -21,7 +21,7 @@ The app collects no data. It has no accounts, no analytics, no advertising and n
 
 Toolbox Studio (the Mac App Store edition) does not connect to the internet.
 
-Toolbox Pro Max (the GitHub edition) connects to the internet only when you use its Download node: it fetches
+Toolbox Studio Unboxed (the GitHub edition) connects to the internet only when you use its Download node: it fetches
 the link you paste, and it downloads the yt-dlp tool from GitHub the first time and refreshes it weekly. No
 information about you is sent apart from what those requests need to work, such as your IP address, which the
 sites you download from can see as with any web request.
@@ -36,4 +36,4 @@ If this ever changes, this page will say so before the app does.
 
 ## Contact
 
-Questions: open an issue at [github.com/corvinus2003/ToolboxProMax](https://github.com/corvinus2003/ToolboxProMax/issues).
+Questions: open an issue at [github.com/corvinus2003/ToolboxStudio](https://github.com/corvinus2003/ToolboxStudio/issues).

@@ -96,10 +96,7 @@ struct AppCommands: Commands {
             Button("Welcome to \(Edition.appName)") { store.showWelcome = true }
             #if !APPSTORE // the App Store does the updating there
             Button("Check for Updates…") {
-                let alert = NSAlert()
-                alert.messageText = "You're on the latest Pro Max."
-                alert.informativeText = "Toolbox Pro Max \(AppInfo.version) is as Pro and as Max as it gets. For now."
-                alert.runModal()
+                NSWorkspace.shared.open(URL(string: "https://github.com/corvinus2003/ToolboxStudio/releases")!)
             }
             #endif
         }

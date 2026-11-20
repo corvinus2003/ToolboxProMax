@@ -1,4 +1,4 @@
-# Toolbox Pro Max
+# Toolbox Studio
 
 **Wire up media tools like building blocks, on your Mac.** Drop in photos, videos, sound or PDFs, connect
 tools with wires and watch every step update live. Press ⌘R and the finished files land in a folder.
@@ -8,15 +8,20 @@ tools with wires and watch every step update live. Press ⌘R and the finished f
 ![License: MIT](https://img.shields.io/badge/license-MIT-blue)
 ![Mac App Store: in review](https://img.shields.io/badge/Mac%20App%20Store-in%20review-0D96F6)
 
-![Toolbox Pro Max: a graph that resizes and dithers a photo, turns it into ASCII art, and pulls the sound out of a video](docs/screenshot.png)
+![Toolbox Studio: a photo dithered with a sunset palette and redrawn as ASCII art, with the live preview in the inspector](AppStore/screenshots/1-photo.png)
 
-## Coming to the Mac App Store as Toolbox Studio
+## From a joke to the App Store
 
-What started as a joke between friends is now a real app with an Apple Developer account behind it.
-On 20 November 2026 it went to Apple for review under the name **Toolbox Studio**. Both editions are built
-from the same code in this repository:
+Toolbox Studio started life as **Toolbox Pro Max**. A friend of mine, Cojo, built
+[Toolbox](https://github.com/MinuneIonel/Utilities), an Electron app that wires image, video, audio and PDF
+tools together as a node graph. I liked it, so the joke was to make "the same toy, but packaged the Apple
+way": a native SwiftUI app that looks and feels like it belongs on a Mac, with the most Apple name we could
+think of. The idea is his. None of his code is used; everything here was written from scratch.
 
-| | **Toolbox Pro Max** (this page) | **Toolbox Studio** (Mac App Store) |
+Then the joke grew up. It got an Apple Developer account, a proper name, and on 20 November 2026 it went to
+Apple for review. It now comes in two editions, built from the same code in this repository:
+
+| | **Toolbox Studio Unboxed** (this page) | **Toolbox Studio** (Mac App Store) |
 | --- | --- | --- |
 | Price | Free and open source | Free |
 | Install | Download the DMG, allow it once in System Settings | One click from the App Store, updates on their own |
@@ -25,14 +30,8 @@ from the same code in this repository:
 | Runs on | Apple Silicon, macOS 26 | Apple Silicon and Intel, macOS 26 |
 | Everything else | Same nodes, same canvas, same results | Same nodes, same canvas, same results |
 
+**Unboxed** because it lives outside the App Store's sandbox, which is what lets it download from the web.
 The App Store link goes here as soon as Apple approves it.
-
-## Where it comes from
-
-A friend of mine, Cojo, built [Toolbox](https://github.com/MinuneIonel/Utilities), an Electron app that
-wires image, video, audio and PDF tools together as a node graph. I liked it, so the joke was to make
-"the same toy, but packaged the Apple way": a native SwiftUI app that looks and feels like it belongs on a
-Mac. The idea is his. None of his code is used; Toolbox Pro Max was written from scratch.
 
 **How it was made:** with [Claude Code](https://claude.com/claude-code), Anthropic's AI coding agent. The
 idea, the choices, the testing and the publishing are mine; Claude wrote the code. I'm saying so plainly
@@ -40,13 +39,14 @@ because it's true and because it's part of what makes the project interesting.
 
 ## Download
 
-Get `Toolbox-Pro-Max-0.1.1.dmg` from [Releases](../../releases).
+Get `Toolbox-Studio-Unboxed-0.2.0.dmg` from [Releases](../../releases).
 
 - **Needs** a Mac with Apple Silicon (M1 or newer) and **macOS 26 Tahoe** or newer.
-- This build isn't signed with a paid certificate, so macOS asks once. Drag Toolbox Pro Max into
+- This build isn't signed with a paid certificate, so macOS asks once. Drag Toolbox Studio Unboxed into
   Applications and open it. When macOS says it can't check the app, open
   **System Settings → Privacy & Security**, scroll down and click **Open Anyway**.
   (Prefer no warnings at all? Toolbox Studio from the App Store installs normally.)
+- Coming from Toolbox Pro Max 0.1? Your saved graph carries over. You can delete the old app afterwards.
 
 ## What it can do
 
@@ -66,14 +66,14 @@ light and dark mode.
 ## Private by design
 
 Everything runs on your Mac. No account, no analytics, no tracking. Toolbox Studio doesn't touch the
-network at all; Toolbox Pro Max only does when you use the Download node.
+network at all; Toolbox Studio Unboxed only does when you use the Download node.
 [Privacy policy](docs/privacy.md).
 
 ## About the size
 
 The disk image is **2.3 MB**. Toolbox 0.3.0's Mac download is 164 MB. That's not because this one is
 cleverer: Toolbox also runs on Windows and Linux, so it carries its own browser engine (Electron) and its own
-ffmpeg. Toolbox Pro Max only runs on recent Macs and uses what macOS already ships: Core Image, AVFoundation,
+ffmpeg. Toolbox Studio only runs on recent Macs and uses what macOS already ships: Core Image, AVFoundation,
 Vision and PDFKit. Different trade-offs, and Toolbox still does things this one doesn't (see below).
 
 ## What's tested, and what isn't
@@ -95,7 +95,7 @@ people's Macs, very long or very large files, and a wide range of real-world for
 - The first accurate text recognition after each launch takes about 25 seconds while macOS loads its
   model. Live previews use the fast model in the meantime.
 - GIF export stops at 900 frames.
-- The GitHub edition has no automatic updates yet.
+- Unboxed has no automatic updates yet: Help → Check for Updates opens the releases page.
 - The Download node fetches yt-dlp from its GitHub releases the first time, checks it against the published
   SHA-256 and refreshes it weekly. Only download things you have the right to.
 
@@ -104,7 +104,7 @@ people's Macs, very long or very large files, and a wide range of real-world for
 Needs Xcode 26 or newer.
 
 ```sh
-./scripts/build-app.sh   # → build/Toolbox Pro Max.app and build/Toolbox-Pro-Max-<version>.dmg
+./scripts/build-app.sh   # → build/Toolbox Studio Unboxed.app and build/Toolbox-Studio-Unboxed-<version>.dmg
 swift run                # quick run from source (no icon)
 ```
 

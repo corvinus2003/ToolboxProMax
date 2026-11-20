@@ -1,11 +1,11 @@
 #!/bin/bash
-# Builds "Toolbox Pro Max.app" and a .dmg into ./build
+# Builds "Toolbox Studio Unboxed.app" and a .dmg into ./build
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
 VERSION=$(tr -d '[:space:]' < VERSION)
-APP="build/Toolbox Pro Max.app"
-DMG="build/Toolbox-Pro-Max-$VERSION.dmg"
+APP="build/Toolbox Studio Unboxed.app"
+DMG="build/Toolbox-Studio-Unboxed-$VERSION.dmg"
 
 echo "▸ Compiling (release)"
 swift build -c release --arch arm64
@@ -30,7 +30,7 @@ rm -rf build/dmg "$DMG"
 mkdir -p build/dmg
 cp -R "$APP" build/dmg/
 ln -s /Applications build/dmg/Applications
-hdiutil create -quiet -volname "Toolbox Pro Max" -srcfolder build/dmg -ov -format UDZO "$DMG"
+hdiutil create -quiet -volname "Toolbox Studio Unboxed" -srcfolder build/dmg -ov -format UDZO "$DMG"
 rm -rf build/dmg
 
 echo "✓ $APP"

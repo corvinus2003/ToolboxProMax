@@ -2,13 +2,13 @@
 
 The same source code builds two editions:
 
-| | Full edition | App Store edition |
+| | Full edition (Unboxed) | App Store edition |
 | --- | --- | --- |
 | Built with | `scripts/build-app.sh` | this folder (Xcode project) |
 | Download node (yt-dlp) | yes | no: the App Store doesn't allow downloading from YouTube or running downloaded programs |
 | Sandbox | no | yes, with security-scoped bookmarks so saved graphs reopen their files |
-| Bundle ID | `app.toolboxpromax` | `io.github.corvinus2003.toolbox` (can never change once published) |
-| Name | Toolbox Pro Max | Toolbox Studio |
+| Bundle ID | `app.toolboxpromax` (kept from the old name) | `io.github.corvinus2003.toolbox` (can never change once published) |
+| Name | Toolbox Studio Unboxed (was Toolbox Pro Max) | Toolbox Studio |
 | Distributed | GitHub releases, free | Mac App Store |
 
 The difference is the `APPSTORE` compilation flag (see `Sources/ToolboxProMax/App/Edition.swift`).

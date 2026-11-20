@@ -17,7 +17,7 @@ enum Edition {
     static var appName: String {
         Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as? String
             ?? Bundle.main.object(forInfoDictionaryKey: "CFBundleName") as? String
-            ?? "Toolbox Pro Max"
+            ?? "Toolbox Studio"
     }
 }
 

@@ -50,7 +50,7 @@ struct WelcomeView: View {
             .controlSize(.extraLarge)
             .keyboardShortcut(.defaultAction)
 
-            Text(Edition.isAppStore ? "Inspired by Cojo's Toolbox." : "Inspired by Cojo's Toolbox. Now with 100% more Pro and 100% more Max.")
+            Text(Edition.isAppStore ? "Inspired by Cojo's Toolbox." : "Started life as Toolbox Pro Max, a joke on Cojo's Toolbox. Now out of the box.")
                 .font(.caption)
                 .foregroundStyle(.tertiary)
                 .padding(.top, 14)

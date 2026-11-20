@@ -56,10 +56,10 @@ node,graph,dither,ascii,batch,resize,convert,pdf,merge,watermark,ocr,gif,extract
 First release on the Mac App Store.
 
 ## Support URL
-https://github.com/corvinus2003/ToolboxProMax
+https://github.com/corvinus2003/ToolboxStudio
 
 ## Privacy Policy URL
-https://github.com/corvinus2003/ToolboxProMax/blob/main/docs/privacy.md
+https://github.com/corvinus2003/ToolboxStudio/blob/main/docs/privacy.md
 
 ## Copyright
 2026 Corvin Ghita
