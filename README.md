@@ -10,13 +10,19 @@ tools with wires and watch every step update live. Press ⌘R and the finished f
 
 ![Toolbox Studio: a photo dithered with a sunset palette and redrawn as ASCII art, with the live preview in the inspector](AppStore/screenshots/1-photo.png)
 
-## From a joke to the App Store
+## From the trenches of C++ algorithmics to the App Store
 
-Toolbox Studio started life as **Toolbox Pro Max**. A friend of mine, Cojo, built
-[Toolbox](https://github.com/MinuneIonel/Utilities), an Electron app that wires image, video, audio and PDF
-tools together as a node graph. I liked it, so the joke was to make "the same toy, but packaged the Apple
-way": a native SwiftUI app that looks and feels like it belongs on a Mac, with the most Apple name we could
-think of. The idea is his. None of his code is used; everything here was written from scratch.
+I come from the trenches of C++ algorithmics, and Toolbox Studio started as a joke from someone who'd been
+down there a while. A friend of mine, Cojo, built [Toolbox](https://github.com/MinuneIonel/Utilities), an
+Electron app that wires image, video, audio and PDF tools together as a node graph. I liked it, so the joke
+was to make "the same toy, but packaged the Apple way": a native SwiftUI app that looks and feels like it
+belongs on a Mac, with the most Apple name I could think of, **Toolbox Pro Max**. The idea is his. None of
+his code is used; everything here was written from scratch.
+
+Here's the punchline: I climbed out of the trenches and ended up right back at a terminal, this time in
+[Claude Code](https://claude.com/claude-code), Anthropic's AI coding agent. Same keyboard, happier person:
+now I bring the idea, make the choices, test it on my Mac and do the publishing, and Claude writes the code.
+I'm saying so plainly because it's true and because it's part of what makes the project interesting.
 
 Then the joke grew up. It got an Apple Developer account, a proper name, and on 20 November 2026 it went to
 Apple for review. It now comes in two editions, built from the same code in this repository:
@@ -32,10 +38,6 @@ Apple for review. It now comes in two editions, built from the same code in this
 
 **Unboxed** because it lives outside the App Store's sandbox, which is what lets it download from the web.
 The App Store link goes here as soon as Apple approves it.
-
-**How it was made:** with [Claude Code](https://claude.com/claude-code), Anthropic's AI coding agent. The
-idea, the choices, the testing and the publishing are mine; Claude wrote the code. I'm saying so plainly
-because it's true and because it's part of what makes the project interesting.
 
 ## Download
 
